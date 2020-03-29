@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Theme Made By www.w3schools.com -->
+    <title>Parkinson's Disease</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #000000;
+            height: 100%;
+            width: 100%;
+            font-size: x-large;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+            height: 100vh;
+            width: 100%;
+            /*position: fixed;*/
+            overflow-x: hidden;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .carousel-control.right,
+        .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+
+        .carousel-indicators li.active {
+            background-color: #f4511e;
+        }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+        .panel:hover {
+            box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+        }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+        .panel-footer h3 {
+            font-size: 32px;
+        }
+
+        .panel-footer h4 {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .panel-footer .btn {
+            margin: 15px 0;
+            background-color: #f4511e;
+            color: #fff;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #f4511e;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar-nav li a:hover,
+        .navbar-nav li.active a {
+            color: #f4511e !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        .butt {
+            margin-top: 10%;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">Detection of Parkinson's Disease</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#tremor">TREMOR</a></li>
+                    <li><a href="#bradykinesia">BRADYKINESIA</a></li>
+                    <li><a href="#gait">GAIT</a></li>
+                    <li><a href="#voice">VOICE</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container (About Section) -->
+    <div id="about" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>What is Parkinson's Disease ?</h2><br>
+                <p>Parkinson's disease (PD) is a neurodegenerative disorder that affects predominantly
+                    dopamine-producing (“dopaminergic”) neurons in a specific area of the brain called substantia nigra.
+                    It is the second most common neurodegenerative disease after Alzheimer's disease. Dr. James
+                    Parkinson was the first to describe this condition called ‘paralysis agitation’ or ‘the shaking
+                    palsy’. In 21st century PD is an ubiquitous issue. In 2015, PD affected 6.2 million people and
+                    resulted in about 117,400 deaths globally.</p><br>
+            </div>
+            <div class="col-sm-4">
+                <img src="/media/parkinson/images/neurons.jpg" width="600px" alt="image">
+            </div>
+        </div>
+        <!-- <div class="container-fluid bg-grey"> -->
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="/media/parkinson/images/symptoms.jpeg" width="350px" alt="image" style="margin-left: 70px">
+            </div>
+            <div class="col-sm-8">
+                <h2>Symptoms</h2>
+                <p><strong>MAJOR</strong> <br>
+                    1) Tremor, mainly at rest and described as pill rolling tremor in hands <br>
+                    2) Bradykinesia or slowness in movement<br>
+                    3) Limb rigidity <br>
+                    4) Gait and balance problems <br>
+                </p><br>
+                <p><strong>MINOR</strong> <br>
+                    1) Voice impairment <br>
+                    2) Masked face <br>
+                </p>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+
+
+    <!-- Container (Tremor Section) -->
+    <div id="tremor" class="container-fluid text-center">
+        <h1 class="text-center">Tremor</h1>
+        <h2> What Is a Parkinson’s Tremor? </h2>
+        <p>A tremor is an involuntary quivering movement affecting 80% of people with parkinson’s. It is one of the
+            major symptoms for early detection of PD.
+
+        </p><br />
+        <p>
+            The tremor that occurs in Parkinson’s disease is different than almost all other tremors because it is a
+            “resting tremor,” present primarily at rest. It goes away with movement, but often returns when the limb
+            (usually a hand or fingers) is held in one position, as in holding a spoon or fork to the mouth, which is
+            why those with Parkinson’s are known to spill things. Parkinson’s disease tremor may affect almost any part
+            of the body, but most commonly involves the fingers, followed next most commonly by the hands, jaw, and feet
+            — in that order.
+
+        </p>
+        <form enctype="multipart/form-data" id="tremorForm" method="POST">{% csrf_token %}
+            <input type="text" id="numberT" name="numberT" placeholder="Enter number" style="margin-left: 15%;">
+            <input type="file" id="t_file" name="tremorFile" style="margin-left: 47%;">
+            <button class="butt" type="submit" value="t"> Check </button>
+        </form>
+    </div>
+
+    <!-- Container (Bradykinesia Section) -->
+    <div id="bradykinesia" class="container-fluid text-center">
+        <h1>Bradykinesia</h1><br>
+        <h2>What is Bradykinesia?</h2>
+        <p> Bradykinesia is defined by slow movement and an impaired ability to move the body swiftly on command. It is
+            one of the primary symptoms of early detection of Parkinson's Disease.
+        </p>
+        <br /><br />
+        <p>Bradykinesia is one of the early signs of a movement disorder in PD. It is caused by reduced levels of
+            dopamine in the brain. It can affect one limb, one side of your body, or your whole body, which can make you
+            unnaturally still. The condition often varies from moment to moment. This can be frustrating, as good
+            quality of movement can quickly be followed by poor quality. As movements become slower and more difficult,
+            you tend to move less and so Parkinson's impacts more on daily life. Reduced coordination and, surprisingly,
+            increased muscle tone, may contribute to bradykinesia
+        </p>
+        <form enctype="multipart/form-data" id="bradyForm" method="POST">{% csrf_token %}
+            <input type="text" id="numberB" name="numberB" placeholder="Enter number" style="margin-left: 15%;">
+            <input type="file" id="b_file" name="bradyFile" style="margin-left: 47%;">
+            <button class="butt" type="submit" value="b"> Check </button>
+        </form>
+    </div>
+    <!-- Container (Gait Section) -->
+    <div id="gait" class="container-fluid text-center">
+        <h1>Gait</h1> <br>
+        <h2>What is Gait?</h2>
+        <p> Gait refers to a person’s manner of walking. Gait analysis is the systematic study of motion, augmented by
+            instrumentation for measuring body movements, body mechanics, and the activity of the muscles.
+
+        </p>
+        <br /><br />
+        <p>Parkinson’s disease (PD) can change the way a person walks. Movement Symptoms like stiff muscles, rigidity
+            and slow movement make it harder to take normal steps. In fact, short, shuffling steps are a common sign of
+            PD, as is freezing, the feeling that your feet are stuck to the floor, for people with mid-stage to advanced
+            PD. Freezing of gait and trouble with turning are the most evident features.
+
+
+        </p>
+        <form enctype="multipart/form-data" id="gaitForm" method="POST">{% csrf_token %}
+            <input type="text" id="numberG" name="numberG" placeholder="Enter number" style="margin-left: 15%;">
+            <input type="file" id="g_file" name="gaitFile" style="margin-left: 47%;">
+            <button class="butt" type="submit" value="g"> Check </button>
+        </form>
+    </div>
+    <!-- Container (Voice Section) -->
+    <div id="voice" class="container-fluid text-center">
+        <h1>Voice</h1> <br>
+        <h2>What is voice impairment?</h2>
+        <br />
+        <p>There are several ways PD may affect speech:
+            The voice may get softer, breathy, or hoarse, causing others difficulty hearing what is said.<br />
+            Speech may be slurred.<br />
+            Speech may be mumbled or expressed rapidly.<br />
+            The tone of the voice may become monotone, lacking the normal ups and downs.<br />
+            The person may have difficulty finding the right words, causing speech to be slower.<br />
+        </p>
+
+
+        <form enctype="multipart/form-data" id="file_form" method="POST">{% csrf_token %}
+            <input type="text" id="number" name="number" placeholder="Enter number" style="margin-left: 15%;">
+            <input type="file" id="v_file" name="voiceFile" style="margin-left: 47%;">
+            <button class="butt" type="submit" value="t"> Check </button>
+        </form>
+        <footer class="text-center">
+            <a href="#myPage" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+        </footer>
+    </div>
+
+
+
+
+    <script>
+
+
+        $(document).ready(function () {
+
+            $('#file_form').on('submit', (e) => {
+                e.preventDefault();
+                console.log(e.target);
+                let input = e.target;
+                let files = document.getElementById('v_file').files[0];
+                let no = document.getElementById('number').value;
+                let csrf = document.querySelector("input[name=csrfmiddlewaretoken]").value;
+                console.log(files, csrf);
+
+
+                var data = new FormData()
+                data.append('file', files)
+                data.append('number', no);
+                data.append('csrfmiddlewaretoken', csrf);
+                fetch('/getData', {
+                    method: 'POST',
+                    body: data
+                })
+                    .then(data => data.json())
+                    .then(data => {
+                        alert(data.url);
+                    })
+            }
+            )
+
+            $('#tremorForm').on('submit', (e) => {
+                e.preventDefault();
+                console.log(e.target);
+                let input = e.target;
+                let files = document.getElementById('t_file').files[0];
+                let no = document.getElementById('numberT').value;
+                let csrf = document.querySelector("input[name=csrfmiddlewaretoken]").value;
+                console.log(files, csrf);
+
+
+                var data = new FormData()
+                data.append('file', files);
+                data.append('numberT', no);
+                data.append('csrfmiddlewaretoken', csrf);
+                fetch('/getDataTremor', {
+                    method: 'POST',
+                    body: data
+                })
+                    .then(data => data.json())
+                    .then(data => {
+                        alert(data.url);
+                    })
+            }
+            )
+
+            $('#bradyForm').on('submit', (e) => {
+                e.preventDefault();
+                console.log(e.target);
+                let input = e.target;
+                let files = document.getElementById('b_file').files[0];
+                let no = document.getElementById('numberB').value;
+                let csrf = document.querySelector("input[name=csrfmiddlewaretoken]").value;
+                console.log(files, csrf);
+
+
+                var data = new FormData()
+                data.append('file', files);
+                data.append('numberB', no);
+                data.append('csrfmiddlewaretoken', csrf);
+                fetch('/getDataBrady', {
+                    method: 'POST',
+                    body: data
+                })
+                    .then(data => data.json())
+                    .then(data => {
+                        alert(data.url);
+                    })
+            }
+            )
+
+            $('#gaitForm').on('submit', (e) => {
+                e.preventDefault();
+                console.log(e.target);
+                let input = e.target;
+                let files = document.getElementById('g_file').files[0];
+                let no = document.getElementById('numberG').value;
+                let csrf = document.querySelector("input[name=csrfmiddlewaretoken]").value;
+                console.log(files, csrf);
+
+
+                var data = new FormData()
+                data.append('file', files);
+                data.append('numberG', no);
+                data.append('csrfmiddlewaretoken', csrf);
+                fetch('/getDataGait', {
+                    method: 'POST',
+                    body: data
+                })
+                    .then(data => data.json())
+                    .then(data => {
+                        alert(data.url);
+                    })
+            }
+            )
+
+
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>
